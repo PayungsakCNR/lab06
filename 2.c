@@ -29,7 +29,7 @@ int main(){
   }
   printf("=%.2f",sum_duration(head));
   free_list(&head);
-  printf("=%.2f",sum_duration(head));
+  //printf("=%.2f",sum_duration(head));
   return 0;
 }
 
