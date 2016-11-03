@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#define NUM 5
 struct song{
   char title[128];
   double duration;
@@ -22,7 +23,7 @@ int main(){
     Song buf;
     LN *head = NULL;
     int i=1;
-    while(i <= 5){
+    while(i <= NUM){
         printf("S%02d: ",i);
         scanf(" %s %lf",buf.title, &buf.duration);
         insert(&head, &buf);
@@ -71,19 +72,6 @@ double sum_duration(LN *head){
     }
     return total;
 }
-/*
-void *free_list(LN *head){
-    LN *tail;
-    if(head == NULL)
-      return NULL;
-    tail = head;
-    while(tail->next != NULL){
-        tail = tail->next;
-    }
-    free(tail);
-    return tail;
-}
-*/
 void free_list(LN **hptr){
     LN *cur=*hptr,*tmp;
     while(cur != NULL){
