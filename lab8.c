@@ -31,7 +31,8 @@ int main(){
          cal(&stack, *tmp);
          tmp++;
    }
-   printf("= %d", stack.head->data);
+   printf("= %d\n", stack.head->data);
+   free_list(&stack.head); //free stack.head
    return 0;
 }
 
